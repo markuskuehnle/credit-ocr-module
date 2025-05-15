@@ -24,7 +24,7 @@ Before using this project, make sure you have the following installed:
 ### Required
 
 - **Docker Desktop**
-  - [Install Guide](https://docs.docker.com/)
+  - [Install Guide](https://docs.docker.com/get-started/get-docker/)
 
 - Docker daemon running (test with `docker info`)
 
