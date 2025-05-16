@@ -33,15 +33,16 @@ def process_document_folder(doc_path: Path, output_path: Path):
     logger.info(f"OCR processing: {doc_path.name}")
     ocr_engine = get_ocr_engine()
     output_path.mkdir(parents=True, exist_ok=True)
-
+    
     page_images = sorted(doc_path.glob("*.png"))
     if not page_images:
         logger.warning(f"No PNGs found in {doc_path}")
         return
 
     for page in page_images:
+        logger.info(f"file={page.name} ({page})")
         try:
-            image = Image.open(page)
+            image   = Image.open(page)
             results = ocr_engine.run_ocr(image)
         except Exception as e:
             logger.error(f"Error processing {page.name}: {e}")
