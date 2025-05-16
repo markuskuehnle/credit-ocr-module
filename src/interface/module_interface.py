@@ -8,7 +8,9 @@ from abc import ABC, abstractmethod
 class Result:
     text: str
     confidence: float
-    bbox: Tuple[int, int, int, int]
+    bbox: tuple[int, int, int, int]
+    page_index: int
+    block_id: str | None = None # unique per box on that page
 
 
 class OCRInterface(ABC):
